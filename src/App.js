@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import {addAction, reduceAction} from './redux/count'
-import logo from './logo.svg';
 import './App.css';
+
+/*
+  in this page, we want to display table and sort
+  PER / 阿特曼Z指數(風險評估, 不適用金融和公用事業) /
+*/
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <CountNormalRedux />
-        </div>
+123123
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => state;
-const mapDispatchToProps = {
-  addAction,
-  reduceAction
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default App;
