@@ -28,11 +28,14 @@ app.get('/stockCategory', (req, res) => {
     res.send(category);
 });
 
-app.post('/api/world', (req, res) => {
-    console.log(req.body);
-    res.send(
-        `I received your POST request. This is what you sent me: ${ req.body.post }`
-    );
+app.get('/stockCategoryContent', (req, res) => {
+    fetch('https://www.twse.com.tw/zh/api/codeFilters?filter=01')
+        .then(result => {
+            return result.json();
+        })
+        .then(result => {
+            res.send(result);
+        });
 });
 
 // https://www.twse.com.tw/zh/api/codeFilters?filter=01

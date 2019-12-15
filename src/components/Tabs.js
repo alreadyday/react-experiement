@@ -13,8 +13,8 @@ class Tabs extends React.PureComponent {
         return (
             <div>
                 <div>
-                    {children.map(child => {
-                        return <div key={ child.name }>{child.name}</div>;
+                    {children.map((child, i) => {
+                        return <div key={ i }>{child.name}</div>;
                     })}
                 </div>
                 <div>{children[this.state.tabIndex]}</div>
