@@ -4,13 +4,23 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
+const fetch = require('node-fetch');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // API calls
 app.get('/api/hello', (req, res) => {
-    res.send({ express: 'Hello From Express' });
+    fetch(
+        'https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_1101.tw|tse_1102.tw|tse_1103.tw|&json=1&delay=0&_=1552123547443'
+    )
+        .then(result => {
+            return result.json();
+        })
+        .then(result => {
+            console.warn(result);
+            res.send(result);
+        });
 });
 
 app.post('/api/world', (req, res) => {
