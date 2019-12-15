@@ -4,7 +4,7 @@ const StockTable = () => {
     const handleSubmit = event => {
         console.warn('123');
         event.preventDefault();
-        fetch('/api/hello').then(response => console.warn(response));
+        fetch('/stockCategory').then(response => console.warn(response));
     };
     return (
         <form onSubmit={ handleSubmit }>
