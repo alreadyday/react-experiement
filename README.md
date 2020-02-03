@@ -30,3 +30,5 @@ https://www.twse.com.tw/zh/
 https://www.tpex.org.tw/web/index.php?l=zh-tw
 
 https://github.com/Asoul/tsrtc
+
+http://stock.nlog.cc/SS/current_taxed_eps
