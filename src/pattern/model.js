@@ -1,6 +1,6 @@
-export class Model {
-    constructor() {
-        this.data = {};
-        this.name = 'model';
-    }
+export default class Model {
+  constructor() {
+    this.data = {};
+    this.name = "model";
+  }
 }

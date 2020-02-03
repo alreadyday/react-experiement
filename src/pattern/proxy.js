@@ -1,20 +1,21 @@
-import Model from './model';
-import Notifier from './notifier';
+import Model from "./model";
+import Notifier from "./notifier";
 
-export class Proxy extends Model {
-    constructor() {
-        this.notifier = new Notifier();
-    }
+export default class Proxy extends Model {
+  constructor() {
+    super();
+    this.notifier = new Notifier();
+  }
 
-    get() {}
+  get() {}
 
-    set() {}
+  set() {}
 
-    registerObserver(callback) {
-        this.notifier.registerObserver(callback);
-    }
+  registerObserver(callback) {
+    this.notifier.registerObserver(callback);
+  }
 
-    unregisterObserver(callback) {
-        this.notifier.unregisterObserver(callback);
-    }
+  unregisterObserver(callback) {
+    this.notifier.unregisterObserver(callback);
+  }
 }
