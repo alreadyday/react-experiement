@@ -1,8 +1,10 @@
 // according id and name of company
-import Proxy from "../../../pattern/proxy";
+import ProxyClass from "../../../pattern/proxy";
 
-export default class CategoryList extends Proxy {
-  constructor() {}
+export default class CategoryList extends ProxyClass {
+  constructor() {
+    super();
+  }
 
   set(data) {
     this.data = {};

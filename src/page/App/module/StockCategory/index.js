@@ -1,9 +1,9 @@
 import React, { PureComponent } from "react";
-import CategoryList from "../../model/CategoryList";
+import { context as MvcContext } from "../../../../modules/MvcCore";
 // 股價變化
 class StockCategory extends PureComponent {
   componentDidMount() {
-    CategoryList.registerObserver(this.refresh);
+    const model = this.props.mvcSingleton.get("model", "CategoryList");
   }
   refresh = () => {
     this.forceUpdate();
@@ -13,4 +13,10 @@ class StockCategory extends PureComponent {
   }
 }
 
-export default StockCategory;
+export default React.forwardRef((props, ref) => (
+  <MvcContext.Consumer>
+    {mvcSingleton => (
+      <StockCategory {...props} mvcSingleton={mvcSingleton} ref={ref} />
+    )}
+  </MvcContext.Consumer>
+));
