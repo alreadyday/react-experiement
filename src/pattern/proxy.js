@@ -7,9 +7,9 @@ export default class Proxy extends Model {
     this.notifier = new Notifier();
   }
 
-  get() {}
-
-  set() {}
+  set(data) {
+    this.notifier.send(data);
+  }
 
   registerObserver(callback) {
     this.notifier.registerObserver(callback);

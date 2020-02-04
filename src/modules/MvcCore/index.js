@@ -28,4 +28,4 @@ export default class MvcCore {
 }
 
 export { default as mapping } from "./mapping";
-export { default as context } from "./context";
+export { default as singleton } from "./singleton";

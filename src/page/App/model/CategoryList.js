@@ -4,9 +4,13 @@ import ProxyClass from "../../../pattern/proxy";
 export default class CategoryList extends ProxyClass {
   constructor() {
     super();
+    this.data = [];
   }
-
+  get() {
+    return this.data;
+  }
   set(data) {
-    this.data = {};
+    this.data = data;
+    super.set(data);
   }
 }
