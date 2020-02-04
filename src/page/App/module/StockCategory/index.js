@@ -13,7 +13,17 @@ class StockCategory extends PureComponent {
   render() {
     const instance = singleton.get();
     const model = instance.get("model", "CategoryList");
-    return Object.values(model.get()).map(name => <div key={name}>{name}</div>);
+    return (
+      <session>
+        <ul>
+          {Object.values(model.get()).map(name => (
+            <li key={name}>
+              <button>{name}</button>
+            </li>
+          ))}
+        </ul>
+      </session>
+    );
   }
 }
 
