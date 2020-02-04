@@ -10,6 +10,8 @@ class Index extends PureComponent {
     this.MvcCore = new MvcCore(mapping);
     this.MvcCore.init();
     singleton.set(this.MvcCore);
+    const command = this.MvcCore.get("controller", "initPage");
+    command.execute();
   }
   render() {
     return (

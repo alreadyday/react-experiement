@@ -26,6 +26,7 @@ app.get("/stockInfo", (req, res) => {
 const category = require("./model/category");
 
 app.get("/stockCategory", (req, res) => {
+  console.warn("category:", category);
   res.send(category);
 });
 

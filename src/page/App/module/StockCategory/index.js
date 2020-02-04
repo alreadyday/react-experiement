@@ -8,11 +8,12 @@ class StockCategory extends PureComponent {
     model.registerObserver(this.refresh);
   }
   refresh = data => {
-    console.warn("data:", data);
     this.forceUpdate();
   };
   render() {
-    return <div>123</div>;
+    const instance = singleton.get();
+    const model = instance.get("model", "CategoryList");
+    return Object.values(model.get()).map(name => <div key={name}>{name}</div>);
   }
 }
 

@@ -23,7 +23,11 @@ export default class MvcCore {
       this.data.model[key] = new value();
     }
   }
-  initController() {}
+  initController() {
+    for (const [key, value] of Object.entries(this.mapping.controller)) {
+      this.data.controller[key] = new value();
+    }
+  }
   initView() {}
 }
 
