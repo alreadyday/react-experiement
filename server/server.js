@@ -13,7 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // API calls
 app.get("/stockInfo", (req, res) => {
   fetch(
-    "https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_1101.tw|tse_1102.tw|tse_1103.tw|"
+    `https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=${req.query.filter
+      .map(companyId => `tse_${companyId}.tw|`)
+      .join("")}`
   )
     .then(result => {
       return result.json();
@@ -30,7 +32,6 @@ app.get("/stockCategory", (req, res) => {
 });
 
 app.get("/stockCategoryContent", (req, res) => {
-  console.warn("req.query.filter:", req.query.filter);
   const content = companies.get(req.query.filter);
   if (!content) {
     fetch(

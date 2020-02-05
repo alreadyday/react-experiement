@@ -1,7 +1,7 @@
 // model
 import CategoryList from "../../page/App/model/CategoryList";
 import CompanyList from "../../page/App/model/CompanyList";
-import StockList from "../../page/App/model/StockList";
+import StockInfoList from "../../page/App/model/StockInfoList";
 // view model
 import menu from "../../page/App/viewModel/menu";
 
@@ -13,7 +13,7 @@ export default {
   model: {
     CategoryList,
     CompanyList,
-    StockList
+    StockInfoList
   },
   viewModel: {
     menu

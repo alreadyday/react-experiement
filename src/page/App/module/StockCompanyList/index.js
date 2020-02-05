@@ -16,6 +16,7 @@ class StockCompanyList extends PureComponent {
     const category = menu.get(menu.category);
     const companyListModel = instance.get("model", "CompanyList");
     const companyList = companyListModel.get(category);
+    const stockInfoListModel = instance.get("model", "StockInfoList");
     if (!companyList) {
       return null;
     } else {
@@ -23,9 +24,11 @@ class StockCompanyList extends PureComponent {
         <section>
           <ul>
             {Object.entries(companyList).map(([key, value]) => {
+              const stockValue = stockInfoListModel.get(key);
               return (
                 <li>
-                  <button>{value}</button>
+                  <button key={key}>{value}</button>
+                  <span>{stockValue}</span>
                 </li>
               );
             })}
@@ -33,7 +36,6 @@ class StockCompanyList extends PureComponent {
         </section>
       );
     }
-    return <section>123</section>;
   }
 }
 
