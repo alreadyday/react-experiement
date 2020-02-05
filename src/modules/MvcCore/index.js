@@ -3,6 +3,7 @@ export default class MvcCore {
     this.mapping = mapping;
     this.data = {
       model: {},
+      viewModel: {},
       controller: {},
       view: {}
     };
@@ -10,6 +11,7 @@ export default class MvcCore {
 
   init() {
     this.initModel();
+    this.initViewModel();
     this.initController();
     this.initView();
   }
@@ -21,6 +23,11 @@ export default class MvcCore {
   initModel() {
     for (const [key, value] of Object.entries(this.mapping.model)) {
       this.data.model[key] = new value();
+    }
+  }
+  initViewModel() {
+    for (const [key, value] of Object.entries(this.mapping.viewModel)) {
+      this.data.viewModel[key] = new value();
     }
   }
   initController() {

@@ -26,11 +26,11 @@ app.get("/stockInfo", (req, res) => {
 const category = require("./model/category");
 
 app.get("/stockCategory", (req, res) => {
-  console.warn("category:", category);
   res.send(category);
 });
 
 app.get("/stockCategoryContent", (req, res) => {
+  console.warn("req.query.filter:", req.query.filter);
   const content = companies.get(req.query.filter);
   if (!content) {
     fetch(
