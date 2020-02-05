@@ -6,8 +6,8 @@ export default class CompanyList extends ProxyClass {
     super();
     this.data = {};
   }
-  get() {
-    return this.data;
+  get(category) {
+    return this.data[category];
   }
   set(category, companyList) {
     this.data[category] = companyList;
