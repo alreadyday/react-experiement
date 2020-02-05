@@ -10,7 +10,12 @@ export default class CompanyList extends ProxyClass {
     return this.data[category];
   }
   set(category, companyList) {
-    this.data[category] = companyList;
-    super.set({ category, companyList });
+    const result = companyList.resualt.reduce((result, company) => {
+      const splitCompany = company.split("	");
+      result[splitCompany[0]] = splitCompany[1];
+      return result;
+    }, {});
+    this.data[category] = result;
+    super.set({ category, result });
   }
 }

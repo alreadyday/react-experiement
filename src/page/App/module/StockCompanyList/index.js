@@ -22,8 +22,12 @@ class StockCompanyList extends PureComponent {
       return (
         <section>
           <ul>
-            {companyList.resualt.map(name => {
-              return <li>{name}</li>;
+            {Object.entries(companyList).map(([key, value]) => {
+              return (
+                <li>
+                  <button>{value}</button>
+                </li>
+              );
             })}
           </ul>
         </section>
