@@ -3,7 +3,7 @@ import ProxyClass from "../../../pattern/proxy";
 
 export default class StockInfoList extends ProxyClass {
   constructor() {
-    super();
+    super(StockInfoList);
     this.data = {};
   }
 
@@ -15,8 +15,6 @@ export default class StockInfoList extends ProxyClass {
     valueArray.msgArray.forEach(value => {
       const companyId = value.c;
       const lastSuccessValue = value.z;
-      console.warn(companyId);
-      console.warn(lastSuccessValue);
       this.data[companyId] = lastSuccessValue;
     });
     super.set(valueArray);

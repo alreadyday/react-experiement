@@ -3,7 +3,7 @@ import ProxyClass from "../../../pattern/proxy";
 
 export default class MenuViewModel extends ProxyClass {
   constructor() {
-    super();
+    super(MenuViewModel);
     this.data = {
       category: null,
       company: null

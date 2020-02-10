@@ -20,10 +20,8 @@ export default class switchCategory {
         .join("")}`
     );
     const stackInfoListResJson = await stackInfoListRes.json();
-    console.warn(stackInfoListRes);
-    console.warn(stackInfoListResJson);
     stockInfoListModel.set(stackInfoListResJson);
 
-    viewModel.set(viewModel.category, categoryId);
+    viewModel.set(viewModel.class.category, categoryId);
   }
 }

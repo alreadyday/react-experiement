@@ -3,7 +3,7 @@ import ProxyClass from "../../../pattern/proxy";
 
 export default class CategoryList extends ProxyClass {
   constructor() {
-    super();
+    super(CategoryList);
     this.data = [];
   }
   get() {

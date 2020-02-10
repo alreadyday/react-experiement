@@ -3,7 +3,7 @@ import ProxyClass from "../../../pattern/proxy";
 
 export default class CompanyList extends ProxyClass {
   constructor() {
-    super();
+    super(CompanyList);
     this.data = {};
   }
   get(category) {

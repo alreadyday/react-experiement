@@ -2,8 +2,8 @@ import Model from "./model";
 import Notifier from "./notifier";
 
 export default class Proxy extends Model {
-  constructor() {
-    super();
+  constructor(param) {
+    super(param);
     this.notifier = new Notifier();
   }
 

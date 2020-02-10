@@ -1,6 +1,7 @@
 export default class Model {
-  constructor() {
+  constructor(classFunction) {
     this.data = null;
     this.name = "model";
+    this.class = classFunction;
   }
 }

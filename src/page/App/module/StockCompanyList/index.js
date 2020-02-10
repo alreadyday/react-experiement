@@ -13,10 +13,11 @@ class StockCompanyList extends PureComponent {
   render() {
     const instance = singleton.get();
     const menu = instance.get("viewModel", "menu");
-    const category = menu.get(menu.category);
+    const category = menu.get(menu.class.category);
     const companyListModel = instance.get("model", "CompanyList");
     const companyList = companyListModel.get(category);
     const stockInfoListModel = instance.get("model", "StockInfoList");
+    const command = instance.get("controller", "switchCompany");
     if (!companyList) {
       return null;
     } else {
@@ -26,8 +27,10 @@ class StockCompanyList extends PureComponent {
             {Object.entries(companyList).map(([key, value]) => {
               const stockValue = stockInfoListModel.get(key);
               return (
-                <li>
-                  <button key={key}>{value}</button>
+                <li key={key}>
+                  <button onClick={() => command.execute(key, "20190101")}>
+                    {value}
+                  </button>
                   <span>{stockValue}</span>
                 </li>
               );
