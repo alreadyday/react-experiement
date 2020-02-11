@@ -12,11 +12,13 @@ export default class StockInfoList extends ProxyClass {
   }
 
   set(valueArray) {
-    valueArray.msgArray.forEach(value => {
-      const companyId = value.c;
-      const lastSuccessValue = value.z;
-      this.data[companyId] = lastSuccessValue;
-    });
+    if ("msgArray" in valueArray) {
+      valueArray.msgArray.forEach(value => {
+        const companyId = value.c;
+        const lastSuccessValue = value.z;
+        this.data[companyId] = lastSuccessValue;
+      });
+    }
     super.set(valueArray);
   }
 }

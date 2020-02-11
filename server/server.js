@@ -13,6 +13,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // API calls
 app.get("/stockInfo", (req, res) => {
+  if (!req.query.filter) {
+    res.send({});
+    return;
+  }
   fetch(
     `https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=${req.query.filter
       .map(companyId => `tse_${companyId}.tw|`)

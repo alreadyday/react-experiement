@@ -20,7 +20,7 @@ class StockCategory extends PureComponent {
       <section>
         <ul>
           {Object.entries(model.get()).map((value, key) => (
-            <li key={key}>
+            <li key={key} style={{ display: "inline-block" }}>
               <button onClick={() => this.onClickCategory(value[0])}>
                 {value[1]}
               </button>

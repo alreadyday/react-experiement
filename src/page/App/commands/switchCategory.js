@@ -21,7 +21,7 @@ export default class switchCategory {
     );
     const stackInfoListResJson = await stackInfoListRes.json();
     stockInfoListModel.set(stackInfoListResJson);
-
     viewModel.set(viewModel.class.category, categoryId);
+    viewModel.set(viewModel.class.company, null);
   }
 }

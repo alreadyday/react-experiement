@@ -27,7 +27,7 @@ class StockCompanyList extends PureComponent {
             {Object.entries(companyList).map(([key, value]) => {
               const stockValue = stockInfoListModel.get(key);
               return (
-                <li key={key}>
+                <li key={key} style={{ display: "inline-block" }}>
                   <button
                     onClick={() =>
                       command.execute(key, menu.get(menu.class.date))
