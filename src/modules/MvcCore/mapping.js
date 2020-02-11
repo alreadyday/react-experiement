@@ -3,6 +3,7 @@ import CategoryList from "../../page/App/model/CategoryList";
 import CompanyList from "../../page/App/model/CompanyList";
 import StockInfoList from "../../page/App/model/StockInfoList";
 import StockHistoryInfoList from "../../page/App/model/StockHistoryInfoList";
+import DateList from "../../page/App/model/DateList";
 // view model
 import menu from "../../page/App/viewModel/menu";
 
@@ -16,7 +17,8 @@ export default {
     CategoryList,
     CompanyList,
     StockInfoList,
-    StockHistoryInfoList
+    StockHistoryInfoList,
+    DateList
   },
   viewModel: {
     menu

@@ -28,7 +28,11 @@ class StockCompanyList extends PureComponent {
               const stockValue = stockInfoListModel.get(key);
               return (
                 <li key={key}>
-                  <button onClick={() => command.execute(key, "20190101")}>
+                  <button
+                    onClick={() =>
+                      command.execute(key, menu.get(menu.class.date))
+                    }
+                  >
                     {value}
                   </button>
                   <span>{stockValue}</span>

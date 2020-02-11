@@ -6,11 +6,13 @@ export default class MenuViewModel extends ProxyClass {
     super(MenuViewModel);
     this.data = {
       category: null,
-      company: null
+      company: null,
+      date: null
     };
   }
   static category = "category";
   static company = "company";
+  static date = "date";
 
   get(type) {
     return this.data[type];
