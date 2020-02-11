@@ -12,5 +12,6 @@ export default class switchCompany {
     const categoryListResJson = await categoryListRes.json();
     stockHistoryInfoList.set(companyId, date, categoryListResJson);
     viewModel.set(viewModel.class.company, companyId);
+    viewModel.set(viewModel.class.date, date);
   }
 }

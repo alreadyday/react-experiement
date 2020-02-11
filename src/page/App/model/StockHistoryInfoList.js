@@ -7,8 +7,10 @@ export default class StockHistoryInfoList extends ProxyClass {
     this.data = {};
   }
 
-  get(companyId) {
-    return this.data[companyId];
+  get(companyId, date) {
+    if (companyId in this.data && date in this.data[companyId])
+      return this.data[companyId][date];
+    else return null;
   }
 
   set(companyId, date, value) {

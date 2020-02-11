@@ -16,8 +16,12 @@ export default class DateList extends ProxyClass {
     }
   };
 
-  get(companyId) {
-    return this.data[companyId];
+  get(index) {
+    return this.data[index];
+  }
+
+  getAll() {
+    return this.data;
   }
 
   set(valueArray) {
