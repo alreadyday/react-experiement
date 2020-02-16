@@ -64,7 +64,6 @@ app.get("/stockHistoryInfoList", (req, res) => {
         return result.json();
       })
       .then(result => {
-        console.warn(result);
         stockHistoryInfoList.set(req.query.companyId, req.query.date, result);
         res.send(stockHistoryInfoList.get(req.query.companyId, req.query.date));
       });

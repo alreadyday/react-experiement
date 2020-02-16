@@ -17,9 +17,7 @@ function StockHistoryInfoList() {
     initAll: function() {
       const companies = fs.readdirSync(DBpath);
       companies.forEach(company => {
-        console.warn(company);
         const companyParam = company.split(fileSeparator);
-        console.warn("companyParam:", companyParam);
         this.initCompany(companyParam[0], companyParam[1]);
       });
     },
