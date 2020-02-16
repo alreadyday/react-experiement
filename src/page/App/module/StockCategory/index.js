@@ -17,7 +17,7 @@ class StockCategory extends PureComponent {
     const instance = singleton.get();
     const model = instance.get("model", "CategoryList");
     return (
-      <section>
+      <section className="category-session">
         <ul>
           {Object.entries(model.get()).map((value, key) => (
             <li key={key} style={{ display: "inline-block" }}>
