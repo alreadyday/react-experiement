@@ -32,3 +32,9 @@ https://www.tpex.org.tw/web/index.php?l=zh-tw
 https://github.com/Asoul/tsrtc
 
 http://stock.nlog.cc/SS/current_taxed_eps
+營益分析表
+https://mops.twse.com.tw/mops/web/t05st24
+資產負債表
+https://mops.twse.com.tw/mops/web/t164sb03
+合併綜合損益表
+https://mops.twse.com.tw/mops/web/t164sb04
