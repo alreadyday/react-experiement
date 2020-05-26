@@ -38,3 +38,6 @@ https://mops.twse.com.tw/mops/web/t05st24
 https://mops.twse.com.tw/mops/web/t164sb03
 合併綜合損益表
 https://mops.twse.com.tw/mops/web/t164sb04
+近四季股東權益報酬率(過濾股價 5 元以下,五日均量在 500 張以下的個股)
+https://fund.bot.com.tw/z/zk/zk5/zkparse_860_-500.djhtm
+https://stock.capital.com.tw/z/zc/zce/zce.djhtm?a=2468
