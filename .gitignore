@@ -6,6 +6,7 @@
 # local data
 /server/DB/companies/*
 /server/DB/stockHistoryInfoList/*
+/server/DB/stockRoeRoaInfo/*
 /reports
 
 # testing

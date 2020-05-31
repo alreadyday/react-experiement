@@ -17,7 +17,7 @@
   },
   "proxy": "http://localhost:5000/",
   "scripts": {
-    "server": "node server/server.js",
+    "server": "nodemon server/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -34,7 +34,9 @@
     "@wdio/spec-reporter": "^5.18.7",
     "@wdio/sync": "^5.18.7",
     "chromedriver": "^80.0.1",
+    "jsdom": "^16.2.2",
     "log4js": "^6.1.2",
+    "nodemon": "^2.0.4",
     "wdio-chromedriver-service": "^5.0.2"
   },
   "browserslist": {

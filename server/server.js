@@ -7,6 +7,7 @@ const port = process.env.PORT || 5000;
 const fetch = require("node-fetch");
 const companies = require("./model/companies");
 const stockHistoryInfoList = require("./model/stockHistoryInfoList");
+const stockRoeRoaInfo = require("./model/stockRoeRoaInfo");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -71,6 +72,28 @@ app.get("/stockHistoryInfoList", (req, res) => {
     res.send(content);
   }
 });
+
+app.get("/stockRoeRoaInfo", (req, res) => {
+  const content = stockRoeRoaInfo.get(req.query.year);
+  const ifrsQueryStr = req.query.year > '101' ? '&ifrs=Y': '';
+  const url = `https://mops.twse.com.tw/mops/web/ajax_t51sb02?%27%5C%20%27encodeURIComponent=1&step=1&firstin=1&off=1&TYPEK=sii&year=${req.query.year}${ifrsQueryStr}`;
+  if (!content) {
+    fetch(url)
+      .then(result => {
+        return result.text();
+      })
+      .then((text)=>{
+        const textResult = JSON.stringify(text);
+        stockRoeRoaInfo.set(req.query.year, textResult);
+        
+        res.send(stockRoeRoaInfo.get(req.query.year));
+      })
+  } else {
+    res.send(content);
+  }
+});
+
+
 
 // https://www.twse.com.tw/zh/api/codeFilters?filter=01
 // https://www.twse.com.tw/zh/api/codeFilters?filter=23
