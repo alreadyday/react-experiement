@@ -12,5 +12,8 @@ export default class initPage {
     // init date
     const dateModel = instance.get("model", "DateList");
     menu.set(menu.class.date, dateModel.get(0));
+    
+    const switchDate = instance.get("controller", "switchDate");
+    switchDate.execute(menu.get(menu.class.date));
   }
 }

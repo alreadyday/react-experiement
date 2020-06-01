@@ -63,8 +63,6 @@ function StockRoeRoaInfo() {
         result[info.companyId] = info;
         return result;
       },{});
-      console.warn(data);
-      
       stockRoeRoaInfo[date] = data;
     },
     initAll: function() {

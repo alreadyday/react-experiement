@@ -15,6 +15,7 @@ class StockCompanyList extends PureComponent {
     const menu = instance.get("viewModel", "menu");
     const dateList = instance.get("model", "DateList");
     const switchCompany = instance.get("controller", "switchCompany");
+    const switchDate = instance.get("controller", "switchDate");
     const company = menu.get(menu.class.company);
 
     const currentDate = menu.get(menu.class.date);
@@ -22,8 +23,13 @@ class StockCompanyList extends PureComponent {
       "model",
       "StockHistoryInfoList"
     );
+    const stockRoeRoaModel = instance.get(
+      "model",
+      "StockRoeRoaInfo"
+    );
     const historyInfo = stockHistoryInfoListtModel.get(company, currentDate);
-    if (!historyInfo) {
+    const roeroaInfo = stockRoeRoaModel.get(currentDate);
+    if (!historyInfo || !roeroaInfo) {
       return null;
     } else {
       const currentCategory = menu.get(menu.class.category);
@@ -43,7 +49,10 @@ class StockCompanyList extends PureComponent {
                 <button
                   disabled={date === currentDate}
                   key={date}
-                  onClick={() => switchCompany.execute(company, date)}
+                  onClick={() => {
+                    switchCompany.execute(company, date);
+                    switchDate.execute(date);
+                  }}
                 >
                   {date}
                 </button>
@@ -52,14 +61,25 @@ class StockCompanyList extends PureComponent {
           </div>
           <table>
             <tbody>
-              {Object.entries(historyInfo).map(([key, value]) => {
-                return (
-                  <tr key={key}>
+              <tr>
+                <td>資產報酬率(%)</td>
+                <td>權益報酬率(%)	稅前純益</td>
+              </tr>
+              <tr>
+                <td>{roeroaInfo[company].returnOnTotalAssets}</td>
+                <td>{roeroaInfo[company].returnOnTotalStockholdersEquaity}</td>
+                <td>{roeroaInfo[company].returnOnTotalStockholdersEquaity / roeroaInfo[company].returnOnTotalAssets}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <tbody>
+                {Object.entries(historyInfo).map(([key, value]) => {
+                  return <tr key={key}>
                     <td>{key}</td>
                     <td>{value[2]}</td>
-                  </tr>
-                );
-              })}
+                  </tr>;
+                })}
             </tbody>
           </table>
         </section>
