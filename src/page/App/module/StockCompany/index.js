@@ -38,10 +38,14 @@ class StockCompanyList extends PureComponent {
 
       const companyListModel = instance.get("model", "CompanyList");
       const companyName = companyListModel.get(currentCategory)[company];
+
+      // now price
+      const stockInfoListModel = instance.get("model", "StockInfoList");
+      const price = stockInfoListModel.get(company);
       return (
         <section>
           <span>
-            {categoryName} - {companyName}
+            {categoryName} - {companyName} - {company} - {price}
           </span>
           <div>
             {dateList.getAll().map(date => {
@@ -63,7 +67,8 @@ class StockCompanyList extends PureComponent {
             <tbody>
               <tr>
                 <td>資產報酬率(%)</td>
-                <td>權益報酬率(%)	稅前純益</td>
+                <td>權益報酬率(%)</td>
+                <td>比例</td>
               </tr>
               <tr>
                 <td>{roeroaInfo[company].returnOnTotalAssets}</td>
