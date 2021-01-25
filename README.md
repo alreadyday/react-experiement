@@ -27,27 +27,21 @@ https://stock.wespai.com/p/7733
 
 台灣證券交易所 https://www.twse.com.tw/zh/
 
-https://www.tpex.org.tw/web/index.php?l=zh-tw
+證券櫃檯買賣中心 https://www.tpex.org.tw/web/index.php?l=zh-tw
 
-https://github.com/Asoul/tsrtc
+神人案例 https://github.com/Asoul/tsrtc
 
-http://stock.nlog.cc/SS/current_taxed_eps
+營益分析表 https://mops.twse.com.tw/mops/web/t05st24
 
-營益分析表
-https://mops.twse.com.tw/mops/web/t05st24
+資產負債表 https://mops.twse.com.tw/mops/web/t164sb03
 
-資產負債表
-https://mops.twse.com.tw/mops/web/t164sb03
+合併綜合損益表 https://mops.twse.com.tw/mops/web/t164sb04
 
-合併綜合損益表
-https://mops.twse.com.tw/mops/web/t164sb04
+近四季股東權益報酬率(過濾股價 5 元以下,五日均量在 500 張以下的個股) https://fund.bot.com.tw/z/zk/zk5/zkparse_860_-500.djhtm
 
-近四季股東權益報酬率(過濾股價 5 元以下,五日均量在 500 張以下的個股)
-https://fund.bot.com.tw/z/zk/zk5/zkparse_860_-500.djhtm
+基本面example  https://stock.capital.com.tw/z/zc/zce/zce.djhtm?a=2468
 
-https://stock.capital.com.tw/z/zc/zce/zce.djhtm?a=2468
-
-https://mops.twse.com.tw/mops/web/ajax_t51sb02
+基本面api https://mops.twse.com.tw/mops/web/ajax_t51sb02
 {
 encodeURIComponent: 1
 run: Y

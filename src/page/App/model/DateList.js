@@ -9,7 +9,10 @@ export default class DateList extends ProxyClass {
   }
 
   static _init = function(dateArray) {
-    const currentYear = new Date().getFullYear();
+    let currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    currentYear = currentMonth === 0 ? currentYear -1 : currentYear;
+
     for (let i = 0; i < 10; i++) {
       const computedYear = currentYear - i;
       dateArray.push(`${computedYear}0101`);
