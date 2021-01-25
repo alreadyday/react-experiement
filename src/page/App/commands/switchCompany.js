@@ -10,8 +10,14 @@ export default class switchCompany {
       `/stockHistoryInfoList?companyId=${companyId}&date=${date}`
     );
     const categoryListResJson = await categoryListRes.json();
-    stockHistoryInfoList.set(companyId, date, categoryListResJson);
-    viewModel.set(viewModel.class.company, companyId);
-    viewModel.set(viewModel.class.date, date);
+    // should not render company if no data
+    if(categoryListResJson) {
+      stockHistoryInfoList.set(companyId, date, categoryListResJson);
+      viewModel.set(viewModel.class.company, companyId);
+      viewModel.set(viewModel.class.date, date);
+    }
+    else{
+      console.error('No StockHistoryInfoList Data!');
+    }
   }
 }

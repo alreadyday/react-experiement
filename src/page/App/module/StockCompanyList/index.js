@@ -29,6 +29,7 @@ class StockCompanyList extends PureComponent {
               return (
                 <li key={key} style={{ display: "inline-block" }}>
                   <button
+                    disabled={!stockValue}
                     onClick={() =>
                       command.execute(key, menu.get(menu.class.date))
                     }
