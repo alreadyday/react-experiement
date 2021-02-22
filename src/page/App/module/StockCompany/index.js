@@ -29,8 +29,8 @@ class StockCompanyList extends PureComponent {
     );
     const historyInfo = stockHistoryInfoListtModel.get(company, currentDate);
     const roeroaInfo = stockRoeRoaModel.get(currentDate);
-    if (!historyInfo || !roeroaInfo) {
-      return null;
+    if (!historyInfo || !roeroaInfo || !roeroaInfo[company]) {
+      return <section>no data</section>;
     } else {
       const currentCategory = menu.get(menu.class.category);
       const categoryListModel = instance.get("model", "CategoryList");
