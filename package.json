@@ -34,7 +34,7 @@
     "@wdio/spec-reporter": "^5.18.7",
     "@wdio/sync": "^5.18.7",
     "chromedriver": "^80.0.1",
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.5.0",
     "log4js": "^6.1.2",
     "nodemon": "^2.0.4",
     "wdio-chromedriver-service": "^5.0.2"
